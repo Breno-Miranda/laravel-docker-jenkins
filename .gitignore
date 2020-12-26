@@ -6,8 +6,7 @@
 .env
 .env.backup
 .phpunit.result.cache
-.docker
-.git
+/.docker
 /SQL
 docker-compose.yml
 Dockerfile
