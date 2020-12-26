@@ -1,0 +1,74 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<flow-build plugin="workflow-job@2.40">
+  <actions>
+    <hudson.model.CauseAction>
+      <causeBag class="linked-hash-map">
+        <entry>
+          <hudson.model.Cause_-UserIdCause>
+            <userId>breno-miranda</userId>
+          </hudson.model.Cause_-UserIdCause>
+          <int>1</int>
+        </entry>
+      </causeBag>
+    </hudson.model.CauseAction>
+    <org.jenkinsci.plugins.workflow.libs.LibrariesAction plugin="workflow-cps-global-lib@2.17">
+      <libraries/>
+    </org.jenkinsci.plugins.workflow.libs.LibrariesAction>
+    <org.jenkinsci.plugins.workflow.cps.EnvActionImpl plugin="workflow-cps@2.87">
+      <env class="tree-map"/>
+    </org.jenkinsci.plugins.workflow.cps.EnvActionImpl>
+  </actions>
+  <queueId>16</queueId>
+  <timestamp>1608879185998</timestamp>
+  <startTime>1608879186003</startTime>
+  <result>FAILURE</result>
+  <duration>126</duration>
+  <charset>UTF-8</charset>
+  <keepLog>false</keepLog>
+  <execution class="org.jenkinsci.plugins.workflow.cps.CpsFlowExecution">
+    <result>FAILURE</result>
+    <script>
+
+node {
+  stage(&apos;HelloWorld&apos;) {
+    echo &apos;Hello World&apos;
+  }
+
+  stage(&apos;git clone&apos;) {
+    git clone &quot;https://github.com/Breno-Miranda/UNP-projeto-integrador.git&quot;
+  }
+}
+</script>
+    <loadedScripts class="map"/>
+    <durabilityHint>MAX_SURVIVABILITY</durabilityHint>
+    <timings class="map">
+      <entry>
+        <string>flowNode</string>
+        <long>44042213</long>
+      </entry>
+      <entry>
+        <string>classLoad</string>
+        <long>11565514</long>
+      </entry>
+      <entry>
+        <string>run</string>
+        <long>91558062</long>
+      </entry>
+      <entry>
+        <string>parse</string>
+        <long>20944309</long>
+      </entry>
+      <entry>
+        <string>saveProgram</string>
+        <long>11746001</long>
+      </entry>
+    </timings>
+    <sandbox>true</sandbox>
+    <iota>16</iota>
+    <head>1:16</head>
+    <done>true</done>
+    <resumeBlocked>false</resumeBlocked>
+  </execution>
+  <completed>true</completed>
+  <checkouts class="hudson.util.PersistedList"/>
+</flow-build>

@@ -1,0 +1,28 @@
+#para documentos do docker composer inicia-se com a versão do arquivo.
+version: "3"
+services:
+
+  #banco de dados
+  mysql:
+    image: mysql:5.7
+    container_name: nataldev-mysql
+    environment:
+      MYSQL_DATABASE: nataldev
+      MYSQL_ROOT_PASSWORD: "senha"
+    ports:
+      - "3307:3306"
+    volumes:
+      - .docker/db:/var/lib/mysql
+    restart: always
+
+
+  # servidor web + php7.2 + laravel 5.6
+  web:
+    build: .
+    container_name: nataldev-php
+    ports:
+      - "8888:80"
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - mysql
