@@ -21,9 +21,9 @@ services:
     build: .
     container_name: nataldev-dev-php
     ports:
-      - "8888:80"
+      - "5000:80"
     volumes:
-      - .docker/jenkins_home/workspaces/dev:/var/www/html
+      - .docker/jenkins_home/workspace/dev:/var/www/html
     depends_on:
       - mysql
 
@@ -33,9 +33,9 @@ services:
     build: .
     container_name: nataldev-hom-php
     ports:
-      - "8888:80"
+      - "6001:80"
     volumes:
-      - .docker/jenkins_home/workspaces/hom:/var/www/html
+      - .docker/jenkins_home/workspace/hom:/var/www/html
     depends_on:
       - mysql
 
@@ -45,9 +45,9 @@ services:
     build: .
     container_name: nataldev-pro-php
     ports:
-      - "7777:80"
+      - "7000:80"
     volumes:
-      - .docker/jenkins_home/workspaces/pro:/var/www/html
+      - .docker/jenkins_home/workspace/pro:/var/www/html
     depends_on:
       - mysql
 
@@ -57,7 +57,7 @@ services:
     build: ./jenkins
     container_name: nataldev-jenkins
     ports:
-      - "6666:8080"
+      - "8000:8080"
       - "443:8443"
     volumes:
       - .docker/jenkins_home:/var/jenkins_home
